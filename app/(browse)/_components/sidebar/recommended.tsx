@@ -19,9 +19,9 @@ export const Recommended = ({ data }: RecommendedProps) => {
         </div>
       )}
       <ul className="space-y-2 px-2">
-        {data.map((user) => {
-          <div key={user.id}>{user.username}</div>;
-        })}
+        {data.map((user) => (
+          <div key={user.id}>{user.username}</div>
+        ))}
       </ul>
     </div>
   );
