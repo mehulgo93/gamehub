@@ -30,7 +30,7 @@ export const getRecommended = async () => {
                         },
                     },
                 },
-            }
+            },
             ],
             },
             orderBy: {
