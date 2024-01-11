@@ -1,6 +1,7 @@
 import { getSelfByUsername } from "@/lib/auth-service";
 import { redirect } from "next/navigation";
 import { Navbar } from "./_components/navbar";
+import { Sidebar } from "./_components/sidebar";
 
 interface CreateLayoutProps {
   params: { username: string };
@@ -15,7 +16,10 @@ const CreaterLayout = async ({ params, children }: CreateLayoutProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-full pt-20">{children}</div>
+      <div className="flex h-full pt-20">
+        <Sidebar />
+        {children}
+      </div>
     </>
   );
 };
