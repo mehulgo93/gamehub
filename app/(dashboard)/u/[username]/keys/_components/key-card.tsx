@@ -19,7 +19,7 @@ export const KeyCard = ({ value }: KeyCardProps) => {
           <div className="w-full flex items-center gap-x-2">
             <Input
               value={value || ""}
-              type="Password"
+              type={show ? "text" : "Password"}
               disabled
               placeholder="Stream Key"
             />
