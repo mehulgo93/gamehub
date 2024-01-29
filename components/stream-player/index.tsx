@@ -3,6 +3,7 @@
 import { useViewerToken } from "@/hooks/use-viewer-token";
 import { Stream, User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
+import { Video } from "./video";
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
