@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Video, VideoSkeleton } from "./video";
 import { Chat, ChatSkeleton } from "./chat";
 import { ChatToggle } from "./chat-toggle";
-import { Header } from "./header";
+import { Header, HeaderSkeleton } from "./header";
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -30,7 +30,7 @@ export const StreamPlayer = ({
   return (
     <>
       {collapsed && (
-        <div className="hidden lg:block fixed top-[100px] right-2 z-60">
+        <div className="hidden lg:block fixed top-[100px] right-2 z-50">
           <ChatToggle />
         </div>
       )}
@@ -72,10 +72,11 @@ export const StreamPlayer = ({
 export const StreamPlayerSkeleton = () => {
   return (
     <div className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full">
-      <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
+      <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-4 lg:overflow-y-auto hidden-scrollbar pb-10">
         <VideoSkeleton />
+        <HeaderSkeleton />
       </div>
-      <div className="col-span-1 bg-background">
+      <div className="col-span-2 bg-background">
         <ChatSkeleton />
       </div>
     </div>
