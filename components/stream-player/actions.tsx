@@ -74,5 +74,5 @@ export const Actions = ({
 };
 
 export const ActionsSkeleton = () => {
-  return <Skeleton className="h-10 w-full lg:w-24" />;
+  return <Skeleton className="h-10 w-full lg:w-24 bg-blue-600" />;
 };

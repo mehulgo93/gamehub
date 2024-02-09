@@ -9,6 +9,7 @@ import { VerifiedMark } from "../verified-mark";
 import { UserIcon } from "lucide-react";
 import { Actions, ActionsSkeleton } from "./actions";
 import { Skeleton } from "../ui/skeleton";
+import { InfoCardSkeleton } from "./info-card";
 
 interface HeaderProps {
   hostName: string;

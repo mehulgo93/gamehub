@@ -4,6 +4,7 @@ import { Pencil } from "lucide-react";
 import { Separator } from "../ui/separator";
 import Image from "next/image";
 import { InfoModal } from "./info-modal";
+import { Skeleton } from "../ui/skeleton";
 
 interface InfoCardProps {
   name: string;
@@ -61,6 +62,36 @@ export const InfoCard = ({
               />
             </div>
           )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const InfoCardSkeleton = () => {
+  return (
+    <div className="px-4">
+      <div className="rounded-xl bg-background">
+        <div className="flex items-center gap-x-2.5 p-4">
+          <Skeleton className="rounded-md bg-blue-600 h-10 w-10 p-2" />
+          <div>
+            <Skeleton className="h-6 w-48 mb-2" /> {/* Placeholder for title */}
+            <Skeleton className="h-4 w-32" /> {/* Placeholder for subtitle */}
+          </div>
+          {/* Placeholder for InfoModal if needed */}
+        </div>
+        <Separator />
+        <div className="p-4 lg:p-6 space-y-4">
+          <Skeleton className="h-4 w-16 mb-2" />{" "}
+          {/* Placeholder for "Name" label */}
+          <Skeleton className="h-6 w-full" />{" "}
+          {/* Placeholder for name content */}
+        </div>
+        <div className="p-4 lg:p-6 space-y-4">
+          <Skeleton className="h-4 w-24 mb-2" />{" "}
+          {/* Placeholder for "Thumbnail" label */}
+          <Skeleton className="h-[200px] w-full md:w-[200px]" />{" "}
+          {/* Placeholder for thumbnail */}
         </div>
       </div>
     </div>
