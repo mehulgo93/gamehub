@@ -11,3 +11,7 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+
+
+// p-4 flex items-center justify-between w-full
