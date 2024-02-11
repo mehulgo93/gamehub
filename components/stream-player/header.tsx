@@ -1,36 +1,40 @@
 "use client";
 
+import { UserIcon } from "lucide-react";
 import {
   useParticipants,
   useRemoteParticipant,
 } from "@livekit/components-react";
-import { UserAvatar, UserAvatarSkeleton } from "../user-avatar";
-import { VerifiedMark } from "../verified-mark";
-import { UserIcon } from "lucide-react";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { VerifiedMark } from "@/components/verified-mark";
+import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
+
 import { Actions, ActionsSkeleton } from "./actions";
-import { Skeleton } from "../ui/skeleton";
-import { InfoCardSkeleton } from "./info-card";
 
 interface HeaderProps {
+  imageUrl: string;
   hostName: string;
   hostIdentity: string;
   viewerIdentity: string;
-  imageUrl: string;
   isFollowing: boolean;
   name: string;
 }
+
 export const Header = ({
+  imageUrl,
   hostName,
   hostIdentity,
   viewerIdentity,
-  imageUrl,
   isFollowing,
   name,
 }: HeaderProps) => {
   const participants = useParticipants();
   const participant = useRemoteParticipant(hostIdentity);
+
   const isLive = !!participant;
   const participantCount = participants.length - 1;
+
   const hostAsViewer = `host-${hostIdentity}`;
   const isHost = viewerIdentity === hostAsViewer;
 
@@ -51,15 +55,15 @@ export const Header = ({
           </div>
           <p className="text-sm font-semibold">{name}</p>
           {isLive ? (
-            <div className="font-semibold flex gap-x-1 items-center text-xs text-rose-500 ">
+            <div className="font-semibold flex gap-x-1 items-center text-xs text-rose-500">
               <UserIcon className="h-4 w-4" />
               <p>
                 {participantCount}{" "}
-                {participantCount === 1 ? "Viewer" : "Viewers"}
+                {participantCount === 1 ? "viewer" : "viewers"}
               </p>
             </div>
           ) : (
-            <p className="font-semibold text-sm text-muted-foreground">
+            <p className="font-semibold text-xs text-muted-foreground">
               Offline
             </p>
           )}
