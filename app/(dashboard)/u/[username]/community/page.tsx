@@ -13,7 +13,7 @@ const CommunityPage = async () => {
     userId: block.blocked.id,
     imageUrl: block.blocked.imageUrl,
     username: block.blocked.username,
-    createdAt: format(new Date(block.blocked.createdAt), "dd/MM/yyyy"),
+    createdAt: format(new Date(block.blocked.createdAt), "MM/dd/yyyy"),
   }));
 
   return (
